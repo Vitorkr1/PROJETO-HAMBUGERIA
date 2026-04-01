@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunger SaaS - Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>🍔 HUNGER</h1>
+            <span>Painel de Pedidos</span>
+        </div>
+        <div class="config-pix">
+            <input type="text" id="chavePix" placeholder="Chave PIX">
+            <input type="text" id="telefoneConfig" placeholder="WhatsApp (Ex: 5511999999999)">
+            <button onclick="salvarConfig()" class="btn btn-primary btn-save">Salvar Loja</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="panel">
+            <div class="metrics-container">
+                <div class="metric-box">
+                    <span>Hoje</span>
+                    <h3 id="vendasHoje">R$ 0,00</h3>
+                </div>
+                <div class="metric-box">
+                    <span>Este Mês</span>
+                    <h3 id="vendasMes">R$ 0,00</h3>
+                </div>
+            </div>
+
+            <h2>Novo Pedido</h2>
+            <form id="form">
+                <div class="input-group">
+                    <label>Nome do Cliente</label>
+                    <input type="text" id="cliente" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Resumo do Pedido</label>
+                    <input type="text" id="pedido" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Valor Total (R$)</label>
+                    <input type="number" id="valor" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Lançar Pedido</button>
+            </form>
+        </aside>
+
+        <section class="board">
+            <h2>Fila de Preparo</h2>
+            <div id="lista" class="card-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

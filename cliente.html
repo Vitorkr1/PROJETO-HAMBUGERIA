@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Pedido - Hunger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="client-mode">
+    <div class="client-container">
+        <h1>🍔 HUNGER</h1>
+        <p class="subtitle">Acompanhe seu pedido</p>
+
+        <div class="order-details">
+            <h2 id="cliNome">Carregando...</h2>
+            <p id="cliPedido">Aguarde...</p>
+            <div class="price">Total: <strong id="cliValor">R$ 0,00</strong></div>
+        </div>
+
+        <div class="status-tracker">
+            <div class="step" id="stepNovo">1. Recebido</div>
+            <div class="step" id="stepPreparando">2. Preparando</div>
+            <div class="step" id="stepPronto">3. Pronto</div>
+        </div>
+
+        <div id="paymentArea" class="payment-area" style="display: none;">
+            <h3>Seu pedido está pronto!</h3>
+            <p>Escaneie o QR Code ou copie a chave para pagar.</p>
+            <img id="cliQrCode" src="" alt="QR Code PIX">
+            <div class="copia-cola">
+                <input type="text" id="cliPixCode" readonly>
+                <button onclick="copiarPixCliente()" class="btn btn-success">Copiar Código PIX</button>
+            </div>
+        </div>
+    </div>
+    <script src="cliente.js"></script>
+</body>
+</html>
